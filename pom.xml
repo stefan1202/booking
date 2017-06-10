@@ -15,11 +15,18 @@
             <version>2.5</version>
         </dependency>
 
+        <!--<dependency>-->
+            <!--<groupId>org.slf4j</groupId>-->
+            <!--<artifactId>slf4j-simple</artifactId>-->
+            <!--<version>1.7.7</version>-->
+        <!--</dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
         <dependency>
             <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>1.7.7</version>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
         </dependency>
+
 
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -32,6 +39,20 @@
             <groupId>org.mongodb</groupId>
             <artifactId>mongo-java-driver</artifactId>
             <version>3.4.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-mongodb -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+            <version>1.5.4.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>1.5.4.RELEASE</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
@@ -47,7 +68,25 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
         </plugins>
     </build>
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<id>spring-releases</id>-->
+            <!--<name>Spring Releases</name>-->
+            <!--<url>https://repo.spring.io/libs-release</url>-->
+        <!--</repository>-->
+    <!--</repositories>-->
+    <!--<pluginRepositories>-->
+        <!--<pluginRepository>-->
+            <!--<id>spring-releases</id>-->
+            <!--<name>Spring Releases</name>-->
+            <!--<url>https://repo.spring.io/libs-release</url>-->
+        <!--</pluginRepository>-->
+    <!--</pluginRepositories>-->
 
 </project>
