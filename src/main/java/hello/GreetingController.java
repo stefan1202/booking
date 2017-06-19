@@ -24,7 +24,7 @@ public class GreetingController {
     }
 
     @RequestMapping("/findByFirstName")
-    public Customer findByFirstName(@RequestParam(value="name", defaultValue="Alice") String name) {
+    public Customer findByFirstName(@RequestParam(value="name", defaultValue="Tudor") String name) {
         return repository.findByFirstName(name);
     }
 }
