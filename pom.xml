@@ -6,7 +6,15 @@
 
     <groupId>com.stephano</groupId>
     <artifactId>booking</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>web</module>
+        <module>common</module>
+        <module>persistence</module>
+        <module>mobil</module>
+        <module>security</module>
+    </modules>
 
     <dependencies>
         <dependency>
