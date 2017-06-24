@@ -20,6 +20,24 @@ public class Location {
     private String coordonateGps;
     private String proprietar;
 
+    private Location(Builder builder) {
+        this.denumire = builder.denumire;
+        this.numarCamere = builder.numarCamere;
+        this.clasificare = builder.clasificare;
+        this.localitate = builder.localitate;
+        this.strada = builder.strada;
+        this.numar = builder.numar;
+        this.wifi = builder.wifi;
+        this.parcare = builder.parcare;
+        this.idCalendar = builder.idCalendar;
+        this.coordonateGps = builder.coordonateGps;
+        this.proprietar = builder.proprietar;
+    }
+
+    public static Builder newLocation() {
+        return new Builder();
+    }
+
     public String getId() {
         return id;
     }
@@ -132,5 +150,85 @@ public class Location {
                 ", coordonateGps='" + coordonateGps + '\'' +
                 ", proprietar='" + proprietar + '\'' +
                 '}';
+    }
+
+    public Location() {
+    }
+
+
+    public static final class Builder {
+        private String denumire;
+        private String numarCamere;
+        private String clasificare;
+        private String localitate;
+        private String strada;
+        private String numar;
+        private String wifi;
+        private String parcare;
+        private String idCalendar;
+        private String coordonateGps;
+        private String proprietar;
+
+        private Builder() {
+        }
+
+        public Location build() {
+            return new Location(this);
+        }
+
+        public Builder denumire(String denumire) {
+            this.denumire = denumire;
+            return this;
+        }
+
+        public Builder numarCamere(String numarCamere) {
+            this.numarCamere = numarCamere;
+            return this;
+        }
+
+        public Builder clasificare(String clasificare) {
+            this.clasificare = clasificare;
+            return this;
+        }
+
+        public Builder localitate(String localitate) {
+            this.localitate = localitate;
+            return this;
+        }
+
+        public Builder strada(String strada) {
+            this.strada = strada;
+            return this;
+        }
+
+        public Builder numar(String numar) {
+            this.numar = numar;
+            return this;
+        }
+
+        public Builder wifi(String wifi) {
+            this.wifi = wifi;
+            return this;
+        }
+
+        public Builder parcare(String parcare) {
+            this.parcare = parcare;
+            return this;
+        }
+
+        public Builder idCalendar(String idCalendar) {
+            this.idCalendar = idCalendar;
+            return this;
+        }
+
+        public Builder coordonateGps(String coordonateGps) {
+            this.coordonateGps = coordonateGps;
+            return this;
+        }
+
+        public Builder proprietar(String proprietar) {
+            this.proprietar = proprietar;
+            return this;
+        }
     }
 }
