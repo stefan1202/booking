@@ -23,18 +23,19 @@ public class LocationController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST,consumes = "application/json")
-    public Location  getByid(@RequestBody Location location){
-        return repository.save(location);
+    public Location  getByid(@RequestBody Location object){
+        return repository.save(object);
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST,consumes = "application/json")
-    public Location  update(@RequestBody Location location){
-        return repository.save(location);
+    public Location  update(@RequestBody Location object){
+        return repository.save(object);
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.POST,consumes = "application/json")
-    public void  delete(@RequestBody Location location){
-        repository.delete(location);
+    public boolean  delete(@RequestBody Location object){
+        repository.delete(object);
+        return repository.exists(object.getId());
     }
 
     @RequestMapping(value = "/findByOwner/{}", method = RequestMethod.POST)
