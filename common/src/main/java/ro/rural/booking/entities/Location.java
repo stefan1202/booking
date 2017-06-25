@@ -17,8 +17,8 @@ public class Location {
     private String wifi;
     private String parcare;
     private String idCalendar;
-    private String coordonateGps;
-    private String proprietar;
+    private GPSCoordinates coordonateGps;
+    private String owner;
 
     private Location(Builder builder) {
         this.denumire = builder.denumire;
@@ -31,7 +31,7 @@ public class Location {
         this.parcare = builder.parcare;
         this.idCalendar = builder.idCalendar;
         this.coordonateGps = builder.coordonateGps;
-        this.proprietar = builder.proprietar;
+        this.owner = builder.owner;
     }
 
     public static Builder newLocation() {
@@ -118,20 +118,20 @@ public class Location {
         this.idCalendar = idCalendar;
     }
 
-    public String getCoordonateGps() {
+    public GPSCoordinates getCoordonateGps() {
         return coordonateGps;
     }
 
-    public void setCoordonateGps(String coordonateGps) {
+    public void setCoordonateGps(GPSCoordinates coordonateGps) {
         this.coordonateGps = coordonateGps;
     }
 
-    public String getProprietar() {
-        return proprietar;
+    public String getOwner() {
+        return owner;
     }
 
-    public void setProprietar(String proprietar) {
-        this.proprietar = proprietar;
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 
     @Override
@@ -148,7 +148,7 @@ public class Location {
                 ", parcare='" + parcare + '\'' +
                 ", idCalendar='" + idCalendar + '\'' +
                 ", coordonateGps='" + coordonateGps + '\'' +
-                ", proprietar='" + proprietar + '\'' +
+                ", owner='" + owner + '\'' +
                 '}';
     }
 
@@ -166,8 +166,8 @@ public class Location {
         private String wifi;
         private String parcare;
         private String idCalendar;
-        private String coordonateGps;
-        private String proprietar;
+        private GPSCoordinates coordonateGps;
+        private String owner;
 
         private Builder() {
         }
@@ -221,13 +221,13 @@ public class Location {
             return this;
         }
 
-        public Builder coordonateGps(String coordonateGps) {
+        public Builder coordonateGps(GPSCoordinates coordonateGps) {
             this.coordonateGps = coordonateGps;
             return this;
         }
 
-        public Builder proprietar(String proprietar) {
-            this.proprietar = proprietar;
+        public Builder owner(String owner) {
+            this.owner = owner;
             return this;
         }
     }

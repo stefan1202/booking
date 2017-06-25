@@ -1,4 +1,3 @@
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -6,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import ro.rural.booking.BookingApplicationPersistence;
-import ro.rural.booking.entities.Client;
 import ro.rural.booking.entities.Location;
 import ro.rural.booking.persistence.LocationRepository;
 
@@ -29,15 +27,15 @@ public class LocationRepositoryTests {
     public void setUp() {
 
 //        repository.deleteAll();
-        location1 = repository.save(builder.denumire("Locatie1").clasificare("3*").localitate("Bucuresti").parcare("NU").proprietar("Stefan").build());
-        location2 = repository.save(builder.denumire("Locatie2").clasificare("2*").localitate("Craiova").parcare("NU").proprietar("Stefan").build());
-        location3 = repository.save(builder.denumire("Locatie3").clasificare("4*").localitate("Pitesti").parcare("NU").proprietar("Mihai").build());
+        location1 = repository.save(builder.denumire("Locatie1").clasificare("3*").localitate("Bucuresti").parcare("NU").owner("Stefan").build());
+        location2 = repository.save(builder.denumire("Locatie2").clasificare("2*").localitate("Craiova").parcare("NU").owner("Stefan").build());
+        location3 = repository.save(builder.denumire("Locatie3").clasificare("4*").localitate("Pitesti").parcare("NU").owner("Mihai").build());
     }
 
     @Test
     public void setsIdOnSave() {
 
-        Location radu = repository.save(builder.denumire("Locatie1").clasificare("3*").localitate("Bucuresti").parcare("NU").proprietar("Stefan").build());;
+        Location radu = repository.save(builder.denumire("Locatie1").clasificare("3*").localitate("Bucuresti").parcare("NU").owner("Stefan").build());;
 
         assertThat(radu.getId()).isNotNull();
     }

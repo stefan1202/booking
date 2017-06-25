@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.*;
 import ro.rural.booking.entities.Location;
 import ro.rural.booking.persistence.LocationRepository;
 
+import java.util.List;
+
 /**
  * Created by stefan.durla on 24/06/2017.
  */
@@ -28,6 +30,16 @@ public class LocationController {
     @RequestMapping(value = "/update", method = RequestMethod.POST,consumes = "application/json")
     public Location  update(@RequestBody Location location){
         return repository.save(location);
+    }
+
+    @RequestMapping(value = "/delete", method = RequestMethod.POST,consumes = "application/json")
+    public void  delete(@RequestBody Location location){
+        repository.delete(location);
+    }
+
+    @RequestMapping(value = "/findByOwner/{}", method = RequestMethod.POST)
+    public List<Location>  update(@PathVariable String owner){
+        return repository.findAllByOwner(owner);
     }
 
 }
