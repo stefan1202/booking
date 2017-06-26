@@ -5,15 +5,17 @@ import { AlertModule } from 'ngx-bootstrap/alert';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
-    BrowserModule,AlertModule.forRoot()
+    BrowserModule, AlertModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
