@@ -17,6 +17,11 @@ public class LocationController {
     LocationRepository repository;
 
 
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    public List<Location>  getByid(){
+        return repository.findAll();
+    }
+    
     @RequestMapping(value = "/get/{locationId}")
     public Location  getByid(@PathVariable String locationId){
         return repository.findOne(locationId);

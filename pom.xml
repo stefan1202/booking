@@ -4,6 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.4.RELEASE</version>
+    </parent>
+
     <groupId>com.stephano</groupId>
     <artifactId>booking</artifactId>
     <packaging>pom</packaging>
@@ -14,7 +20,7 @@
         <module>common</module>
         <module>persistence</module>
         <module>mobil</module>
-        <module>security</module>
+        <!--<module>security</module>-->
     </modules>
 
     <dependencies>
@@ -65,6 +71,7 @@
         <dependency>
             <groupId>com.jayway.jsonpath</groupId>
             <artifactId>json-path</artifactId>
+            <version>2.0.0</version>
             <scope>test</scope>
         </dependency>
 

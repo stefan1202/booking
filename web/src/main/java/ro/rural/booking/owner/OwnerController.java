@@ -1,5 +1,7 @@
 package ro.rural.booking.owner;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ro.rural.booking.entities.Owner;
@@ -14,6 +16,10 @@ public class OwnerController {
     @Autowired
     OwnerRepository repository;
 
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    public List<Owner>  getAll(){
+        return repository.findAll();
+    }
 
     @RequestMapping(value = "/get/{objectId}")
     public Owner getByid(@PathVariable String objectId){
